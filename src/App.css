@@ -2,37 +2,214 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+}
+
+.card img {
+  height: 200px; 
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card:hover img {
+  transform: scale(1.3);
+}
+
+.card button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card button:disabled {
+  background-color: #7d7474;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+.alert-message {
+  color: red;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+/* Ensures the page is fully scrolled and content is not cut off */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Styles the video to cover the entire background without affecting scrolling */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   pointer-events: none;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Ensures that content is scrollable and overlays the video */
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 50px;
+  min-height: 100vh; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+/* Additional styling for page layout */
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card-description {
+  width: 100%;
+  height: auto; 
+  min-height: 60px; 
+  max-height: 90px; 
+  overflow: hidden; 
+  padding: 10px;
+  box-sizing: border-box; 
+  font-size: 14px;
+  line-height: 1.5; 
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; 
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Align the text and icon vertically */
+  position: relative; /* Make the parent element the positioning context for the tooltip */
+}
+
+.info-icon {
+  margin-left: 10px; /* Space between the text and the icon */
+  color: #007bff; /* Optional: Color for the info icon */
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  top: 30px; /* Position the tooltip below the icon */
+  left: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  z-index: 1000;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.tooltip p {
+  margin: 0;
+}
+
+.tooltip ul {
+  margin: 5px 0 0 0;
+  padding-left: 20px;
+}
+
+/* Connect Wallet button styling */
+.connect-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.connect-button:hover {
+  background-color: #218838;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Wallet info styling */
+.wallet-info p {
+  margin: 0;
+  font-size: 16px;
+  color: #201c1c;
 }
+
+/* Cards container styling */
+.cards-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 20px; 
+}
+
